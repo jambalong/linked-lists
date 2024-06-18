@@ -59,11 +59,7 @@ class LinkedList
     return nil if head.nil?
     raise IndexError, "Index out of bounds" if index < 0 || index >= self.size
 
-    while node && index > 0
-      node = node.next_node
-      index -= 1
-    end
-
+    node = node.next_node and index -= 1 while node && index > 0
     node
   end
 
