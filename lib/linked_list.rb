@@ -88,23 +88,12 @@ class LinkedList
   end
 
   def contains?(value)
-    return false if head.nil?
-
-    node = head
-
-    while node
-      return true if node.value == value
-
-      node = node.next_node
-    end
-
-    false
+    find(value) ? true : false
   end
 
-  def find(value)
-    return false if head.nil?
+  def find(value, node = head)
+    return nil if head.nil?
 
-    node = head
     index = 0
 
     while node
