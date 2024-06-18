@@ -82,11 +82,10 @@ class LinkedList
     string + "nil"
   end
 
-  def insert_at(value, index)
-    return unless at(index)
+  def insert_at(value, index, new_node = Node.new(value))
     return prepend(value) if index.zero?
-
-    new_node = Node.new(value)
+    return append(value) if index == self.size
+    return unless at(index)
 
     previous_node = at(index - 1)
     new_node.next_node = previous_node.next_node
