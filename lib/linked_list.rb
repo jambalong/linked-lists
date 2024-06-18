@@ -10,27 +10,12 @@ class LinkedList
     @head = nil
   end
 
-  def append(value)
-    new_node = Node.new(value)
-
-    if head.nil?
-      self.head = new_node
-    else
-      node = head
-
-      while node.next_node
-        node = node.next_node
-      end
-
-      node.next_node = new_node
-    end
-
+  def append(value, new_node = Node.new(value), node = head)
+    head.nil? ? (self.head = new_node) : (tail.next_node = new_node)
     self
   end
 
-  def prepend(value)
-    new_node = Node.new(value, head)
-
+  def prepend(value, new_node = Node.new(value, head))
     if head.nil?
       self.head = new_node
     else
