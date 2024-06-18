@@ -41,15 +41,10 @@ class LinkedList
     self
   end
 
-  def size
-    node = head
-    size = 0
+  def size(node = head, size = 0)
+    return size if node.nil?
 
-    while node
-      size += 1
-      node = node.next_node
-    end
-
+    size += 1 and node = node.next_node while node
     size
   end
 
