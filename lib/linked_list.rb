@@ -79,25 +79,12 @@ class LinkedList
     node
   end
 
-  def pop
+  def pop(node = head)
     return nil if head.nil?
+    return self.head = nil unless node.next_node
 
-    node = head
-
-    if node.next_node.nil?
-      self.head = nil
-
-      return node
-    end
-
-    while node.next_node && node.next_node.next_node
-      node = node.next_node
-    end
-
-    pop = node.next_node
-    node.next_node = nil
-
-    pop
+    node = node.next_node while node&.next_node&.next_node
+    node.next_node.tap { node.next_node = nil }
   end
 
   def contains?(value)
