@@ -10,19 +10,14 @@ class LinkedList
     @head = nil
   end
 
-  def append(value, new_node = Node.new(value), node = head)
+  def append(value, new_node = Node.new(value))
     head.nil? ? (self.head = new_node) : (tail.next_node = new_node)
     self
   end
 
   def prepend(value, new_node = Node.new(value, head))
-    if head.nil?
-      self.head = new_node
-    else
-      new_node.next_node = head
-      self.head = new_node
-    end
-
+    new_node.next_node = head if head
+    self.head = new_node
     self
   end
 
@@ -42,9 +37,9 @@ class LinkedList
 
   def at(index, node = head)
     return nil if head.nil?
-    raise IndexError, "Index out of bounds" if index < 0 || index >= self.size
+    raise IndexError, 'Index out of bounds' if index.negative? || index >= size
 
-    node = node.next_node and index -= 1 while node && index > 0
+    node = node.next_node and index -= 1 while node && index.positive?
     node
   end
 
@@ -79,12 +74,12 @@ class LinkedList
       node = node.next_node
     end
 
-    string + "nil"
+    string + 'nil'
   end
 
   def insert_at(value, index, new_node = Node.new(value))
     return prepend(value) if index.zero?
-    return append(value) if index == self.size
+    return append(value) if index == size
     return unless at(index)
 
     previous_node = at(index - 1)
@@ -106,10 +101,4 @@ class LinkedList
 
     self
   end
-
-  # def traverse(node = head)
-  #   while node
-  #     node = node.next_node
-  #   end
-  # end
 end
