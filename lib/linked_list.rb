@@ -53,15 +53,10 @@ class LinkedList
     size
   end
 
-  def tail
-    return nil if head.nil?
+  def tail(node = head)
+    return nil if node.nil?
 
-    node = head
-
-    while node.next_node
-      node = node.next_node
-    end
-
+    node = node.next_node while node.next_node
     node
   end
 
