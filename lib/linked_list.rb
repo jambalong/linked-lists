@@ -65,11 +65,9 @@ class LinkedList
     node
   end
 
-  def at(index)
+  def at(index, node = head)
     return nil if head.nil?
     raise IndexError, "Index out of bounds" if index < 0 || index >= self.size
-
-    node = head
 
     while node && index > 0
       node = node.next_node
