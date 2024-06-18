@@ -91,10 +91,8 @@ class LinkedList
     find(value) ? true : false
   end
 
-  def find(value, node = head)
+  def find(value, node = head, index = 0)
     return nil if head.nil?
-
-    index = 0
 
     while node
       return index if node.value == value
