@@ -98,10 +98,12 @@ class LinkedList
   def remove_at(index)
     return unless at(index)
 
-    self.head = at(1) if index.zero?
-
-    previous_node = at(index - 1)
-    previous_node.next_node = at(index).next_node
+    if index.zero?
+      self.head = at(1)
+    else
+      previous_node = at(index - 1)
+      previous_node.next_node = at(index).next_node
+    end
 
     self
   end
