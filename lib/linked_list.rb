@@ -106,8 +106,7 @@ class LinkedList
     nil
   end
 
-  def to_s
-    node = head
+  def to_s(node = head)
     string = ''
 
     while node
