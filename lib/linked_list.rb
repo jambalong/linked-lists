@@ -104,9 +104,7 @@ class LinkedList
     nil
   end
 
-  def to_s(node = head)
-    string = ''
-
+  def to_s(node = head, string = '')
     while node
       string += "#{node.value} -> "
       node = node.next_node
