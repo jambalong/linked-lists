@@ -1,6 +1,10 @@
 # Linked Lists
 
-This project is part of The Odin Project - [Linked Lists](https://www.theodinproject.com/lessons/ruby-linked-lists) in Ruby curriculum.
+This project is part of The Odin Project: [Linked Lists](https://www.theodinproject.com/lessons/ruby-linked-lists)
+
+## Overview
+
+In this project, you will create a basic implementation of a linked list in Ruby, focusing on object-oriented programming principles. You will learn how to create and manipulate data structures using classes and methods.
 
 ## Assignment
 
@@ -28,3 +32,35 @@ Build the following methods in your linked list class:
 2. `#remove_at(index)` that removes the node at the given `index`.
 
 **Extra Credit Tip:** When you insert or remove a node, consider how it will affect the existing nodes. Some of the nodes will need their `#next_node` link updated.
+
+## Installation Instructions
+
+To run this project locally, follow these steps:
+
+### Prerequisites
+
+- Ensure you have [Ruby](https://www.ruby-lang.org/en/downloads/) installed on your machine.
+
+### Steps to Install
+
+1. **Clone the Repository:**
+
+   Open your terminal and run the following command:
+
+   ```bash
+   git clone https://github.com/jambalong/linked-lists.git
+   ```
+
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd linked-lists
+   ```
+
+3. **Run the Code**:
+
+   `main.rb` contains tests for the `LinkedList` implementation, execute:
+   ```bash
+   ruby main.rb
+   ```
+   
+This will run the linked list implementation and display the output in the terminal.
